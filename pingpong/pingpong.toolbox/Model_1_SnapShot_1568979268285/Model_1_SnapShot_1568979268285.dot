@@ -1,0 +1,18 @@
+strict digraph DiskGraph {
+edge [colorscheme="paired12"]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+1965608093350319602 [label="/\\ ping = \"\"\n/\\ pong = \"\"",style = filled]
+1965608093350319602 -> -3470034060334225382 [label="",color="2",fontcolor="2"];
+-3470034060334225382 [label="/\\ ping = \"ping\"\n/\\ pong = \"\""];
+-3470034060334225382 -> 4493639735426028588 [label="",color="3",fontcolor="3"];
+4493639735426028588 [label="/\\ ping = \"ping\"\n/\\ pong = \"pong\""];
+{rank = same; 1965608093350319602;}
+{rank = same; -3470034060334225382;}
+}
+subgraph cluster_legend {graph[style=bold];label = "Next State Actions" style="solid"
+node [ labeljust="l",colorscheme="paired12",style=filled,shape=record ]
+Ping [label="Ping",fillcolor=2]
+Pong [label="Pong",fillcolor=3]
+}}

@@ -2,18 +2,10 @@
 EXTENDS Integers
 VARIABLE ping, pong
 
-vars == << ping, pong >>   \* need for the Spec (fariness property)
+vars == << ping, pong >>   \* need for the Spec (further property)
 
 \* eventually always ping = ping and pong = pong
-\* eventually = at some point on time
-\* always = this will always hold 
-
-\* Terminated == <>[](ping = "ping" /\ pong = "pong")
-
-\* adding this porperty to xheck it 
-AlwaysEventuallyPingAndPong == []<>(ping = "ping" /\ pong = "pong")
-
-----------------------------------------------------------------------
+Terminated == <>[](ping = "ping" /\ pong = "pong")
 
 TypeOk == 
     /\ ping \in { "", "ping" }
@@ -35,16 +27,8 @@ Pong ==
     /\ pong = ""
     /\ pong' = "pong"
     /\ UNCHANGED << ping >>
-    
-\* saying reset works as 
-\* when ping = "ping" and pong "pong" then reset both    
-Reset == 
-    /\ ping = "ping"
-    /\ pong = "pong"
-    /\ ping' = ""
-    /\ pong' = ""
-    
+        
 Next == Ping \/ Pong
 
-Spec == Init /\ []([Next]_vars) /\ WF_vars(Ping) /\ WF_vars(Pong) \* Ping will have a weak fairness property
+Spec == Int /\ []([Next]_vars)
 ===============================================================================================

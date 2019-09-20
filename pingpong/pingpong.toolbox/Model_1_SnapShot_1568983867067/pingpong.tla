@@ -7,13 +7,10 @@ vars == << ping, pong >>   \* need for the Spec (fariness property)
 \* eventually always ping = ping and pong = pong
 \* eventually = at some point on time
 \* always = this will always hold 
-
-\* Terminated == <>[](ping = "ping" /\ pong = "pong")
+Terminated == <>[](ping = "ping" /\ pong = "pong")
 
 \* adding this porperty to xheck it 
-AlwaysEventuallyPingAndPong == []<>(ping = "ping" /\ pong = "pong")
-
-----------------------------------------------------------------------
+Foo == []<>(ping = "ping" /\ pong = "pong")
 
 TypeOk == 
     /\ ping \in { "", "ping" }
