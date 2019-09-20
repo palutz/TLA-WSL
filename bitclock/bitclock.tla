@@ -10,6 +10,9 @@ TypeOk == clock \in PossibleValues
 Init == clock = 0 
 
 ZeroTo1 == clock = 0 /\ clock' = 1
+\*  Another way 
+\*ZeroTo1 == /\ clock = 0 
+\*           /\ clock' = 1
 
 OneTo0 == clock = 1 /\ clock' = 0
 
@@ -17,4 +20,7 @@ Next == ZeroTo1 \/ OneTo0
 \* Alternatives
 \* Next1 == clock' = IF clock = 0 THEN 1 ELSE 1
 \* Next2 == clock' = (clock +1) % 2
+\* Another way to write it (prolog like) is like that, alling horizontally
+Next3 == \/ ZeroTo1
+         \/ OneTo0
 ===============================================================================================
