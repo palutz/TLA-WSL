@@ -1,0 +1,29 @@
+strict digraph DiskGraph {
+edge [colorscheme="paired12"]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+-2238177302453812857 [label="light = \"g\"",style = filled]
+-2238177302453812857 -> -7528070627904075746 [label="",color="2",fontcolor="2"];
+-7528070627904075746 [label="light = \"y\""];
+-2238177302453812857 -> -2238177302453812857 [style="dashed"];
+-7528070627904075746 -> 5705555040162930022 [label="",color="3",fontcolor="3"];
+5705555040162930022 [label="light = \"r\""];
+-7528070627904075746 -> -7528070627904075746 [style="dashed"];
+5705555040162930022 -> 6359857477150367526 [label="",color="4",fontcolor="4"];
+6359857477150367526 [label="light = \"yr\""];
+5705555040162930022 -> 5705555040162930022 [style="dashed"];
+6359857477150367526 -> -2238177302453812857 [label="",color="5",fontcolor="5"];
+6359857477150367526 -> 6359857477150367526 [style="dashed"];
+{rank = same; -2238177302453812857;}
+{rank = same; -7528070627904075746;}
+{rank = same; 5705555040162930022;}
+{rank = same; 6359857477150367526;}
+}
+subgraph cluster_legend {graph[style=bold];label = "Next State Actions" style="solid"
+node [ labeljust="l",colorscheme="paired12",style=filled,shape=record ]
+greenToYellow [label="greenToYellow",fillcolor=2]
+yellowRedToGreen [label="yellowRedToGreen",fillcolor=5]
+yellowToRed [label="yellowToRed",fillcolor=3]
+redToYellowred [label="redToYellowred",fillcolor=4]
+}}
